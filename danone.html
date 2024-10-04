@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Викторина: Столицы стран ЕС</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .quiz-container {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .quiz-container.active {
+            display: flex;
+        }
+        .flag {
+            width: 80px;
+            height: auto;
+        }
+        .options {
+            list-style: none;
+            padding: 0;
+        }
+        .option {
+            background-color: #e4e4e4;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .option.correct {
+            background-color: #a4e4a4;
+        }
+        .option.incorrect {
+            background-color: #e4a4a4;
+        }
+        .navigation {
+            margin-top: 20px;
+        }
+        .navigation button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .navigation button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- 1. Австрия -->
+    <div class="quiz-container active" id="slide1">
+        <h1>Викторина: Столицы стран ЕС</h1>
+        <div class="question">
+            <div>
+                <img src="https://flagcdn.com/h80/at.png" alt="Флаг Австрии" class="flag">
+                <p>Какая столица Австрии?</p>
+                <p class="info">Австрия граничит с Германией, Чехией, Словакией, Венгрией, Словенией, Италией, Швейцарией и Лихтенштейном.</p>
+            </div>
+        </div>
+        <ul class="options">
+            <li class="option" data-answer="correct">A. Вена</li>
+            <li class="option" data-answer="incorrect">B. Зальцбург</li>
+            <li class="option" data-answer="incorrect">C. Грац</li>
+            <li class="option" data-answer="incorrect">D. Инсбрук</li>
+        </ul>
+        <div class="navigation">
+            <button onclick="nextSlide(2)">Далее</button>
+        </div>
+    </div>
+
+    <!-- 2. Бельгия -->
+    <div class="quiz-container" id="slide2">
+        <h1>Викторина: Столицы стран ЕС</h1>
+        <div class="question">
+            <div>
+                <img src="https://flagcdn.com/h80/be.png" alt="Флаг Бельгии" class="flag">
+                <p>Какая столица Бельгии?</p>
+                <p class="info">Бельгия граничит с Нидерландами, Германией, Люксембургом и Францией.</p>
+            </div>
+        </div>
+        <ul class="options">
+            <li class="option" data-answer="correct">A. Брюссель</li>
+            <li class="option" data-answer="incorrect">B. Антверпен</li>
+            <li class="option" data-answer="incorrect">C. Гент</li>
+            <li class="option" data-answer="incorrect">D. Льеж</li>
+        </ul>
+        <div class="navigation">
+            <button onclick="nextSlide(3)">Далее</button>
+        </div>
+    </div>
+
+    <!-- 3. Болгария -->
+    <div class="quiz-container" id="slide3">
+        <h1>Викторина: Столицы стран ЕС</h1>
+        <div class="question">
+            <div>
+                <img src="https://flagcdn.com/h80/bg.png" alt="Флаг Болгарии" class="flag">
+                <p>Какая столица Болгарии?</p>
+                <p class="info">Болгария граничит с Румынией, Сербией, Северной Македонией, Грецией и Турцией.</p>
+            </div>
+        </div>
+        <ul class="options">
+            <li class="option" data-answer="correct">A. София</li>
+            <li class="option" data-answer="incorrect">B. Пловдив</li>
+            <li class="option" data-answer="incorrect">C. Варна</li>
+            <li class="option" data-answer="incorrect">D. Бургас</li>
+        </ul>
+        <div class="navigation">
+            <button onclick="nextSlide(4)">Далее</button>
+        </div>
+    </div>
+
+    <!-- 4. Венгрия -->
+    <div class="quiz-container" id="slide4">
+        <h1>Викторина: Столицы стран ЕС</h1>
+        <div class="question">
+            <div>
+                <img src="https://flagcdn.com/h80/hu.png" alt="Флаг Венгрии" class="flag">
+                <p>Какая столица Венгрии?</p>
+                <p class="info">Венгрия граничит с Австрией, Словакией, Украиной, Румынией, Сербией, Хорватией и Словенией.</p>
+            </div>
+        </div>
+        <ul class="options">
+            <li class="option" data-answer="correct">A. Будапешт</li>
+            <li class="option" data-answer="incorrect">B. Дебрецен</li>
+            <li class="option" data-answer="incorrect">C. Сегед</li>
+            <li class="option" data-answer="incorrect">D. Мишкольц</li>
+        </ul>
+        <div class="navigation">
+            <button onclick="nextSlide(5)">Далее</button>
+        </div>
+    </div>
+
+    <!-- 5. Германия -->
+    <div class="quiz-container" id="slide5">
+        <h1>Викторина: Столицы стран ЕС</h1>
+        <div class="question">
+            <div>
+                <img src="https://flagcdn.com/h80/de.png" alt="Флаг Германии" class="flag">
+                <p>Какая столица Германии?</p>
+                <p class="info">Германия граничит с Данией, Польшей, Чехией, Австрией, Швейцарией, Францией, Люксембургом, Бельгией и Нидерландами.</p>
+            </div>
+        </div>
+        <ul class="options">
+            <li class="option" data-answer="correct">A. Берлин</li>
+            <li class="option" data-answer="incorrect">B. Мюнхен</li>
+            <li class="option" data-answer="incorrect">C. Франкфурт</li>
+            <li class="option" data-answer="incorrect">D. Гамбург</li>
+        </ul>
+        <div class="navigation">
+            <button onclick="nextSlide(6)">Далее</button>
+        </div>
+    </div>
+
+    <!-- 6. Греция -->
+    <div class="quiz-container" id="slide6">
+        <h1>Викторина: Столицы стран ЕС</h1>
+        <div class="question">
+            <div>
+                <img src="https://flagcdn.com/h80/gr.png" alt="Флаг Греции" class="flag">
+                <p>Какая столица Греции?</p>
+                <p class="info">Греция граничит с Албанией, Северной Македонией, Болгарией и Турцией.</p>
+            </div>
+        </div>
+        <ul class="options">
+            <li class="option" data-answer="correct">A. Афины</li>
+            <li class="option" data-answer="incorrect">B. Салоники</li>
+            <li class="option" data-answer="incorrect">C. Патры</li>
+            <li class="option" data-answer="incorrect">D. Ираклион</li>
+        </ul>
+        <div class="navigation">
+            <button onclick="nextSlide(7)">Далее</button>
+        </div>
+    </div>
+
+    <!-- 7. Дания -->
+    <div class="quiz-container" id="slide7">
+        <h1>Викторина: Столицы стран ЕС</h1>
+        <div class="question">
+            <div>
+                <img src="https://flagcdn.com/h80/dk.png" alt="Флаг Дании" class="flag">
+                <p>Какая столица Дании?</p>
+                <p class="info">Дания граничит с Германией и имеет морские границы с Швецией и Норвегией.</p>
+            </div>
+        </div>
+        <ul class="options">
+            <li class="option" data-answer="correct">A. Копенгаген</li>
+            <li class="option" data-answer="incorrect">B. Осло</li>
+            <li class="option" data-answer="incorrect">C. Стокгольм</li>
+            <li class="option" data-answer="incorrect">D. Хельсинки</li>
+        </ul>
+        <div class="navigation">
+            <button onclick="nextSlide(8)">Далее</button>
+        </div>
+    </div>
+
+    <!-- 8. Ирландия -->
+    <div class="quiz-container" id="slide8">
+        <h1>Викторина: Столицы стран ЕС</h1>
+        <div class="question">
+            <div>
+                <img src="https://flagcdn.com/h80/ie.png" alt="Флаг Ирландии" class="flag">
+                <p>Какая столица Ирландии?</p>
+                <p class="info">Ирландия граничит с Северной Ирландией (часть Великобритании) и имеет морские границы с Великобританией.</p>
+            </div>
+        </div>
+        <ul class="options">
+            <li class="option" data-answer="correct">A. Дублин</li>
+            <li class="option" data-answer="incorrect">B. Белфаст</li>
+            <li class="option" data-answer="incorrect">C. Лондон</li>
+            <li class="option" data-answer="incorrect">D. Эдинбург</li>
+        </ul>
+        <div class="navigation">
+            <button onclick="nextSlide(9)">Далее</button>
+        </div>
+    </div>
+
+    <!-- 9. Испания -->
+    <div class="quiz-container" id="slide9">
+        <h1>Викторина: Столицы стран ЕС</h1>
+        <div class="question">
+            <div>
+                <img src="https://flagcdn.com/h80/es.png" alt="Флаг Испании" class="flag">
+                <p>Какая столица Испании?</p>
+                <p class="info">Испания граничит с Португалией, Францией, Андоррой и Гибралтаром (заморская территория Великобритании).</p>
+            </div>
+        </div>
+        <ul class="options">
+            <li class="option" data-answer="correct">A. Мадрид</li>
+            <li class="option" data-answer="incorrect">B. Барселона</li>
+            <li class="option" data-answer="incorrect">C. Валенсия</li>
+            <li class="option" data-answer="incorrect">D. Севилья</li>
+        </ul>
+        <div class="navigation">
+            <button onclick="nextSlide(10)">Далее</button>
+        </div>
+    </div>
+
+    <!-- 10. Италия -->
+    <div class="quiz-container" id="slide10">
+        <h1>Викторина: Столицы стран ЕС</h1>
+        <div class="question">
+            <div>
+                <img src="https://flagcdn.com/h80/it.png" alt="Флаг Италии" class="flag">
+                <p>Какая столица Италии?</p>
+                <p class="info">Италия граничит с Францией, Швейцарией, Австрией и Словенией. Внутри Италии находятся два независимых государства: Ватикан и Сан-Марино.</p>
+            </div>
+        </div>
+        <ul class="options">
+            <li class="option" data-answer="correct">A. Рим</li>
+            <li class="option" data-answer="incorrect">B. Милан</li>
+            <li class="option" data-answer="incorrect">C. Венеция</li>
+            <li class="option" data-answer="incorrect">D. Неаполь</li>
+        </ul>
+        <div class="navigation">
+            <button onclick="nextSlide(11)">Далее</button>
+        </div>
+    </div>
+
+    <!-- 11. Кипр -->
+    <div class="quiz-container" id="slide11">
+        <h1>Викторина: Столицы стран ЕС</h1>
+        <div class="question">
+            <div>
+                <img src="https://flagcdn.com/h80/cy.png" alt="Флаг Кипра" class="flag">
+                <p>Какая столица Кипра?</p>
+                <p class="info">Кипр — островное государство в Средиземном море, не имеющее сухопутных границ с другими странами.</p>
+            </div>
+        </div>
+        <ul class="options">
+            <li class="option" data-answer="correct">A. Никосия</li>
+            <li class="option" data-answer="incorrect">B. Лимасол</li>
+            <li class="option" data-answer="incorrect">C. Ларнака</li>
+            <li class="option" data-answer="incorrect">D. Пафос</li>
+        </ul>
+        <div class="navigation">
+            <button onclick="nextSlide(12)">Далее</button>
+        </div>
+    </div>
+
+    <!-- 12. Латвия -->
+    <div class="quiz-container" id="slide12">
+        <h1>Викторина: Столицы стран ЕС</h1>
+        <div class="question">
+            <div>
+                <img src="https://flagcdn.com/h80/lv.png" alt="Флаг Латвии" class="flag">
+                <p>Какая столица Латвии?</p>
+                <p class="info">Латвия граничит с Эстонией, Россией, Белоруссией и Литвой.</p>
+            </div>
+        </div>
+        <ul class="options">
+            <li class="option" data-answer="correct">A. Рига</li>
+            <li class="option" data-answer="incorrect">B. Вильнюс</li>
+            <li class="option" data-answer="incorrect">C. Таллин</li>
+            <li class="option" data-answer="incorrect">D. Минск</li>
+        </ul>
+        <div class="navigation">
+            <button onclick="nextSlide(13)">Далее</button>
+        </div>
+    </div>
+    <!-- 13. Литва -->
+    <div class="quiz-container" id="slide13">
+        <h1>Викторина: Столицы стран ЕС</h1>
+        <div class="question">
+            <div>
+                <img src="https://flagcdn.com/h80/lt.png" alt="Флаг Литвы" class="flag">
+                <p>Какая столица Литвы?</p>
+                <p class="info">Литва граничит с Латвией, Белоруссией, Польшей и Россией (Калининградская область).</p>
+            </div>
+        </div>
+        <ul class="options">
+            <li class="option" data-answer="correct">A. Вильнюс</li>
+            <li class="option" data-answer="incorrect">B. Рига</li>
+            <li class="option" data-answer="incorrect">C. Таллин</li>
+            <li class="option" data-answer="incorrect">D. Минск</li>
+        </ul>
+        <div class="navigation">
+            <button onclick="nextSlide(14)">Далее</button>
+        </div>
+    </div>
+
+    <!-- 14. Люксембург -->
+    <div class="quiz-container" id="slide14">
+        <h1>Викторина: Столицы стран ЕС</h1>
+        <div class="question">
+            <div>
+                <img src="https://flagcdn.com/h80/lu.png" alt="Флаг Люксембурга" class="flag">
+                <p>Какая столица Люксембурга?</p>
+                <p class="info">Люксембург граничит с Бельгией, Францией и Германией.</p>
+            </div>
+        </div>
+        <ul class="options">
+            <li class="option" data-answer="correct">A. Люксембург</li>
+            <li class="option" data-answer="incorrect">B. Брюссель</li>
+            <li class="option" data-answer="incorrect">C. Берлин</li>
+            <li class="option" data-answer="incorrect">D. Париж</li>
+        </ul>
+        <div class="navigation">
+            <button onclick="nextSlide(15)">Далее</button>
+        </div>
+    </div>
+
+    <!-- 15. Мальта -->
+    <div class="quiz-container" id="slide15">
+        <h1>Викторина: Столицы стран ЕС</h1>
+        <div class="question">
+            <div>
+                <img src="https://flagcdn.com/h80/mt.png" alt="Флаг Мальты" class="flag">
+                <p>Какая столица Мальты?</p>
+                <p class="info">Мальта — островное государство в Средиземном море, не имеющее сухопутных границ с другими странами.</p>
+            </div>
+        </div>
+        <ul class="options">
+            <li class="option" data-answer="correct">A. Валлетта</li>
+            <li class="option" data-answer="incorrect">B. Слима</li>
+            <li class="option" data-answer="incorrect">C. Мдина</li>
+            <li class="option" data-answer="incorrect">D. Биркиркара</li>
+        </ul>
+        <div class="navigation">
+            <button onclick="nextSlide(16)">Далее</button>
+        </div>
+    </div>
+
+    <!-- 16. Нидерланды -->
+    <div class="quiz-container" id="slide16">
+        <h1>Викторина: Столицы стран ЕС</h1>
+        <div class="question">
+            <div>
+                <img src="https://flagcdn.com/h80/nl.png" alt="Флаг Нидерландов" class="flag">
+                <p>Какая столица Нидерландов?</p>
+                <p class="info">Нидерланды граничат с Бельгией и Германией и имеют морские границы с Великобританией.</p>
+            </div>
+        </div>
+        <ul class="options">
+            <li class="option" data-answer="correct">A. Амстердам</li>
+            <li class="option" data-answer="incorrect">B. Роттердам</li>
+            <li class="option" data-answer="incorrect">C. Гаага</li>
+            <li class="option" data-answer="incorrect">D. Утрехт</li>
+        </ul>
+        <div class="navigation">
+            <button onclick="nextSlide(17)">Далее</button>
+        </div>
+    </div>
+
+    <!-- 17. Польша -->
+    <div class="quiz-container" id="slide17">
+        <h1>Викторина: Столицы стран ЕС</h1>
+        <div class="question">
+            <div>
+                <img src="https://flagcdn.com/h80/pl.png" alt="Флаг Польши" class="flag">
+                <p>Какая столица Польши?</p>
+                <p class="info">Польша граничит с Германией, Чехией, Словакией, Украиной, Белоруссией, Литвой и Россией (Калининградская область).</p>
+            </div>
+        </div>
+        <ul class="options">
+            <li class="option" data-answer="correct">A. Варшава</li>
+            <li class="option" data-answer="incorrect">B. Краков</li>
+            <li class="option" data-answer="incorrect">C. Вроцлав</li>
+            <li class="option" data-answer="incorrect">D. Гданьск</li>
+        </ul>
+        <div class="navigation">
+            <button onclick="nextSlide(18)">Далее</button>
+        </div>
+    </div>
+
+    <!-- 18. Португалия -->
+    <div class="quiz-container" id="slide18">
+        <h1>Викторина: Столицы стран ЕС</h1>
+        <div class="question">
+            <div>
+                <img src="https://flagcdn.com/h80/pt.png" alt="Флаг Португалии" class="flag">
+                <p>Какая столица Португалии?</p>
+                <p class="info">Португалия граничит только с Испанией и имеет морские границы с Атлантическим океаном.</p>
+            </div>
+        </div>
+        <ul class="options">
+            <li class="option" data-answer="correct">A. Лиссабон</li>
+            <li class="option" data-answer="incorrect">B. Порту</li>
+            <li class="option" data-answer="incorrect">C. Брага</li>
+            <li class="option" data-answer="incorrect">D. Коимбра</li>
+        </ul>
+        <div class="navigation">
+            <button onclick="nextSlide(19)">Далее</button>
+        </div>
+    </div>
+
+    <!-- 19. Румыния -->
+    <div class="quiz-container" id="slide19">
+        <h1>Викторина: Столицы стран ЕС</h1>
+        <div class="question">
+            <div>
+                <img src="https://flagcdn.com/h80/ro.png" alt="Флаг Румынии" class="flag">
+                <p>Какая столица Румынии?</p>
+                <p class="info">Румыния граничит с Украиной, Молдовой, Болгарией, Сербией и Венгрией.</p>
+            </div>
+        </div>
+        <ul class="options">
+            <li class="option" data-answer="correct">A. Бухарест</li>
+            <li class="option" data-answer="incorrect">B. Клуж-Напока</li>
+            <li class="option" data-answer="incorrect">C. Тимишоара</li>
+            <li class="option" data-answer="incorrect">D. Констанца</li>
+        </ul>
+        <div class="navigation">
+            <button onclick="nextSlide(20)">Далее</button>
+        </div>
+    </div>
+
+    <!-- 20. Словакия -->
+    <div class="quiz-container" id="slide20">
+        <h1>Викторина: Столицы стран ЕС</h1>
+        <div class="question">
+            <div>
+                <img src="https://flagcdn.com/h80/sk.png" alt="Флаг Словакии" class="flag">
+                <p>Какая столица Словакии?</p>
+                <p class="info">Словакия граничит с Чехией, Польшей, Украиной, Венгрией и Австрией.</p>
+            </div>
+        </div>
+        <ul class="options">
+            <li class="option" data-answer="correct">A. Братислава</li>
+            <li class="option" data-answer="incorrect">B. Прага</li>
+            <li class="option" data-answer="incorrect">C. Будапешт</li>
+            <li class="option" data-answer="incorrect">D. Вена</li>
+        </ul>
+        <div class="navigation">
+            <button onclick="nextSlide(21)">Далее</button>
+        </div>
+    </div>
+
+    <!-- 21. Словения -->
+    <div class="quiz-container" id="slide21">
+        <h1>Викторина: Столицы стран ЕС</h1>
+        <div class="question">
+            <div>
+                <img src="https://flagcdn.com/h80/si.png" alt="Флаг Словении" class="flag">
+                <p>Какая столица Словении?</p>
+                <p class="info">Словения граничит с Италией, Австрией, Венгрией и Хорватией.</p>
+            </div>
+        </div>
+        <ul class="options">
+            <li class="option" data-answer="correct">A. Любляна</li>
+            <li class="option" data-answer="incorrect">B. Загреб</li>
+            <li class="option" data-answer="incorrect">C. Вена</li>
+            <li class="option" data-answer="incorrect">D. Будапешт</li>
+        </ul>
+        <div class="navigation">
+            <button onclick="nextSlide(22)">Далее</button>
+        </div>
+    </div>
+
+    <!-- 22. Финляндия -->
+    <div class="quiz-container" id="slide22">
+        <h1>Викторина: Столицы стран ЕС</h1>
+        <div class="question">
+            <div>
+                <img src="https://flagcdn.com/h80/fi.png" alt="Флаг Финляндии" class="flag">
+                <p>Какая столица Финляндии?</p>
+                <p class="info">Финляндия граничит с Швецией, Норвегией и Россией.</p>
+            </div>
+        </div>
+        <ul class="options">
+            <li class="option" data-answer="correct">A. Хельсинки</li>
+            <li class="option" data-answer="incorrect">B. Стокгольм</li>
+            <li class="option" data-answer="incorrect">C. Осло</li>
+            <li class="option" data-answer="incorrect">D. Копенгаген</li>
+        </ul>
+        <div class="navigation">
+            <button onclick="nextSlide(23)">Далее</button>
+        </div>
+    </div>
+
+    <!-- 23. Франция -->
+    <div class="quiz-container" id="slide23">
+        <h1>Викторина: Столицы стран ЕС</h1>
+        <div class="question">
+            <div>
+                <img src="https://flagcdn.com/h80/fr.png" alt="Флаг Франции" class="flag">
+                <p>Какая столица Франции?</p>
+                <p class="info">Франция граничит с Бельгией, Люксембургом, Германией, Швейцарией, Италией, Монако, Испанией и Андоррой.</p>
+            </div>
+        </div>
+        <ul class="options">
+            <li class="option" data-answer="correct">A. Париж</li>
+            <li class="option" data-answer="incorrect">B. Марсель</li>
+            <li class="option" data-answer="incorrect">C. Лион</li>
+            <li class="option" data-answer="incorrect">D. Ницца</li>
+        </ul>
+        <div class="navigation">
+            <button onclick="nextSlide(24)">Далее</button>
+        </div>
+    </div>
+
+    <!-- 24. Хорватия -->
+    <div class="quiz-container" id="slide24">
+        <h1>Викторина: Столицы стран ЕС</h1>
+        <div class="question">
+            <div>
+                <img src="https://flagcdn.com/h80/hr.png" alt="Флаг Хорватии" class="flag">
+                <p>Какая столица Хорватии?</p>
+                <p class="info">Хорватия граничит с Словенией, Венгрией, Сербией, Боснией и Герцеговиной и Черногорией.</p>
+            </div>
+        </div>
+        <ul class="options">
+            <li class="option" data-answer="correct">A. Загреб</li>
+            <li class="option" data-answer="incorrect">B. Любляна</li>
+            <li class="option" data-answer="incorrect">C. Сараево</li>
+            <li class="option" data-answer="incorrect">D. Белград</li>
+        </ul>
+        <div class="navigation">
+            <button onclick="nextSlide(25)">Далее</button>
+        </div>
+    </div>
+
+    <!-- 25. Чехия -->
+    <div class="quiz-container" id="slide25">
+        <h1>Викторина: Столицы стран ЕС</h1>
+        <div class="question">
+            <div>
+                <img src="https://flagcdn.com/h80/cz.png" alt="Флаг Чехии" class="flag">
+                <p>Какая столица Чехии?</p>
+                <p class="info">Чехия граничит с Германией, Польшей, Словакией и Австрией.</p>
+            </div>
+        </div>
+        <ul class="options">
+            <li class="option" data-answer="correct">A. Прага</li>
+            <li class="option" data-answer="incorrect">B. Братислава</li>
+            <li class="option" data-answer="incorrect">C. Вена</li>
+            <li class="option" data-answer="incorrect">D. Будапешт</li>
+        </ul>
+        <div class="navigation">
+            <button onclick="nextSlide(26)">Далее</button>
+        </div>
+    </div>
+
+    <!-- 26. Швеция -->
+    <div class="quiz-container" id="slide26">
+        <h1>Викторина: Столицы стран ЕС</h1>
+        <div class="question">
+            <div>
+                <img src="https://flagcdn.com/h80/se.png" alt="Флаг Швеции" class="flag">
+                <p>Какая столица Швеции?</p>
+                <p class="info">Швеция граничит с Норвегией и Финляндией и имеет морские границы с Данией, Германией, Польшей, Литвой, Латвией и Эстонией.</p>
+            </div>
+        </div>
+        <ul class="options">
+            <li class="option" data-answer="correct">A. Стокгольм</li>
+            <li class="option" data-answer="incorrect">B. Осло</li>
+            <li class="option" data-answer="incorrect">C. Хельсинки</li>
+            <li class="option" data-answer="incorrect">D. Копенгаген</li>
+        </ul>
+        <div class="navigation">
+            <button onclick="nextSlide(27)">Далее</button>
+        </div>
+    </div>
+    <!-- 27. Эстония -->
+    <div class="quiz-container" id="slide27">
+        <h1>Викторина: Столицы стран ЕС</h1>
+        <div class="question">
+            <div>
+                <img src="https://flagcdn.com/h80/ee.png" alt="Флаг Эстонии" class="flag">
+                <p>Какая столица Эстонии?</p>
+                <p class="info">Эстония граничит с Латвией и Россией и имеет морские границы с Финляндией и Швецией.</p>
+            </div>
+        </div>
+        <ul class="options">
+            <li class="option" data-answer="correct">A. Таллин</li>
+            <li class="option" data-answer="incorrect">B. Рига</li>
+            <li class="option" data-answer="incorrect">C. Вильнюс</li>
+            <li class="option" data-answer="incorrect">D. Хельсинки</li>
+        </ul>
+        <div class="navigation">
+            <button onclick="nextSlide(28)">Далее</button>
+        </div>
+    </div>
+
+    <!-- 28. Чехия -->
+    <div class="quiz-container" id="slide28">
+        <h1>Викторина: Столицы стран ЕС</h1>
+        <div class="question">
+            <div>
+                <img src="https://flagcdn.com/h80/cz.png" alt="Флаг Чехии" class="flag">
+                <p>Какая столица Чехии?</p>
+                <p class="info">Чехия граничит с Германией, Польшей, Словакией и Австрией.</p>
+            </div>
+        </div>
+        <ul class="options">
+            <li class="option" data-answer="correct">A. Прага</li>
+            <li class="option" data-answer="incorrect">B. Братислава</li>
+            <li class="option" data-answer="incorrect">C. Вена</li>
+            <li class="option" data-answer="incorrect">D. Будапешт</li>
+        </ul>
+        <div class="navigation">
+            <button onclick="nextSlide(29)">Далее</button>
+        </div>
+    </div>
+
+    <!-- 29. Швеция -->
+    <div class="quiz-container" id="slide29">
+        <h1>Викторина: Столицы стран ЕС</h1>
+        <div class="question">
+            <div>
+                <img src="https://flagcdn.com/h80/se.png" alt="Флаг Швеции" class="flag">
+                <p>Какая столица Швеции?</p>
+                <p class="info">Швеция граничит с Норвегией и Финляндией и имеет морские границы с Данией, Германией, Польшей, Литвой, Латвией и Эстонией.</p>
+            </div>
+        </div>
+        <ul class="options">
+            <li class="option" data-answer="correct">A. Стокгольм</li>
+            <li class="option" data-answer="incorrect">B. Осло</li>
+            <li class="option" data-answer="incorrect">C. Хельсинки</li>
+            <li class="option" data-answer="incorrect">D. Копенгаген</li>
+        </ul>
+        <div class="navigation">
+            <button onclick="nextSlide(30)">Далее</button>
+        </div>
+    </div>
+
+    <!-- 30. Эстония -->
+    <div class="quiz-container" id="slide30">
+        <h1>Викторина: Столицы стран ЕС</h1>
+        <div class="question">
+            <div>
+                <img src="https://flagcdn.com/h80/ee.png" alt="Флаг Эстонии" class="flag">
+                <p>Какая столица Эстонии?</p>
+                <p class="info">Эстония граничит с Латвией и Россией и имеет морские границы с Финляндией и Швецией.</p>
+            </div>
+        </div>
+        <ul class="options">
+            <li class="option" data-answer="correct">A. Таллин</li>
+            <li class="option" data-answer="incorrect">B. Рига</li>
+            <li class="option" data-answer="incorrect">C. Вильнюс</li>
+            <li class="option" data-answer="incorrect">D. Хельсинки</li>
+        </ul>
+        <div class="navigation">
+            <button onclick="nextSlide(31)">Далее</button>
+        </div>
+    </div>
+
+    <script>
+        function nextSlide(slideNumber) {
+            const currentSlide = document.querySelector('.quiz-container.active');
+            const nextSlide = document.getElementById(`slide${slideNumber}`);
+            if (currentSlide) {
+                currentSlide.classList.remove('active');
+            }
+            if (nextSlide) {
+                nextSlide.classList.add('active');
+            }
+        }
+
+        document.querySelectorAll('.option').forEach(option => {
+            option.addEventListener('click', function() {
+                const isCorrect = this.getAttribute('data-answer') === 'correct';
+                if (isCorrect) {
+                    this.classList.add('correct');
+                } else {
+                    this.classList.add('incorrect');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
